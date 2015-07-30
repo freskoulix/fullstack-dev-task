@@ -35,7 +35,7 @@ class PrivateProjectsPlanController extends Controller
             return new Response('', 404);
         }
 
-        if ($expirationDate < new DateTime('now')) {
+        if ($expirationDate < new \DateTime('now')) {
             return new Response('', 406);
         }
 
