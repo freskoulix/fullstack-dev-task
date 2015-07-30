@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>Redeem codes list</h1>
+
+    <table class="records_list">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Redeem code</th>
+            <th>Campaign Id of redeem code</th>
+            <th>Number of projects</th>
+            <th>Redeem code used</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.code }}</td>
+                <td>{{ entity.campaignId }}</td>
+                <td>{{ entity.projects }}</td>
+                <td>{{ entity.used }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

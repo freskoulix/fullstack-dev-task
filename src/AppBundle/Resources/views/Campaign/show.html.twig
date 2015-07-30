@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>Campaign</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Number of redeem codes</th>
+                <td>{{ entity.codes }}</td>
+            </tr>
+            <tr>
+                <th>Number of private projects</th>
+                <td>{{ entity.number }}</td>
+            </tr>
+            <tr>
+                <th>Duration of private projects in dates</th>
+                <td>{{ entity.durationDates }}</td>
+            </tr>
+            <tr>
+                <th>Campaign start date</th>
+                <td>{{ entity.startDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Campaign end date</th>
+                <td>{{ entity.endDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('campaign') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('campaign_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

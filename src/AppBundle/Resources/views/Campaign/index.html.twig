@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>Campaign list</h1>
+
+    <table class="records_list">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Number of redeem codes</th>
+            <th>Number of private projects</th>
+            <th>Campaign start date</th>
+            <th>Campaign end date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('campaign_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.codes }}</td>
+                <td>{{ entity.number }}</td>
+                <td>{{ entity.durationDates }}</td>
+                <td>{{ entity.startDate|date('Y-m-d H:i:s') }}</td>
+                <td>{{ entity.endDate|date('Y-m-d H:i:s') }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('campaign_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('campaign_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('campaign_new') }}">
+                Create a Campaign
+            </a>
+        </li>
+    </ul>
+{% endblock %}

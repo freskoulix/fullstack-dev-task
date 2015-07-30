@@ -6,3 +6,10 @@ app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix:   /user
 
+app_campaign:
+    resource: "@AppBundle/Resources/config/routing/campaign.yml"
+    prefix:   /campaign
+
+app_redeem:
+    resource: "@AppBundle/Resources/config/routing/redeem.yml"
+    prefix:   /redeem

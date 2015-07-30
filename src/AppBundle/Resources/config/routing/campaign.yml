@@ -1,0 +1,30 @@
+campaign:
+    path:     /
+    defaults: { _controller: "AppBundle:Campaign:index" }
+
+campaign_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Campaign:show" }
+
+campaign_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Campaign:new" }
+
+campaign_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Campaign:create" }
+    requirements: { _method: post }
+
+campaign_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Campaign:edit" }
+
+campaign_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Campaign:update" }
+    requirements: { _method: post|put }
+
+campaign_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Campaign:delete" }
+    requirements: { _method: post|delete }
